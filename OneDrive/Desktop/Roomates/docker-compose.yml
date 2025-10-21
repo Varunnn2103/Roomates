@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+
+  # 1. The Postgres Database
+  database:
+    image: postgres:15-alpine
+    container_name: roomates-db
+    environment:
+      # Set the password for your database
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Varun@2103 
+      POSTGRES_DB: roomates_db
+    ports:
+      - "5432:5432" # Expose the DB port to your host machine
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  # 2. The Java Backend
+  backend:
+    container_name: roomates-backend
+    # Tell Docker to build the image from the Dockerfile in this folder
+    build: ./roomates-app # <-- UPDATE THIS to your Java folder name
+    ports:
+      - "8080:8080"
+    environment:
+      # Tell Spring Boot how to connect to the Docker database
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/roomates_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: Varun@2103
+      # Add your Cloudinary keys
+      CLOUDINARY_CLOUD_NAME: ydgk7m6ivc
+      CLOUDINARY_API_KEY: 548662924735573
+      CLOUDINARY_API_SECRET: tzMXaHXayB09x5dm7QBng5tj__A
+    depends_on:
+      - database # Don't start the backend until the database is ready
+
+  # 3. The React Frontend
+  frontend:
+    container_name: roomates-frontend
+    # Build the image from the Dockerfile in your React folder
+    build: ./ROOMATES-FRONTEND # <-- UPDATE THIS to your React folder name
+    ports:
+      - "5173:80" # Map host port 5173 to container port 80 (Nginx)
+    depends_on:
+      - backend # Don't start until the backend is ready
+
+# This volume will persist your database data
+volumes:
+  postgres-data:

@@ -1,0 +1,21 @@
+# Ignore Node.js dependencies
+/roomates-frontend/node_modules/
+
+# Ignore compiled Java code
+/roomates-app/target/
+
+# Ignore build folders
+/roomates-frontend/dist/
+
+# Ignore IDE and OS files
+.vscode/
+.idea/
+*.iml
+.DS_Store
+
+# Ignore logs
+*.log
+npm-debug.log
+
+# Ignore .env files (if you ever add them)
+.env
