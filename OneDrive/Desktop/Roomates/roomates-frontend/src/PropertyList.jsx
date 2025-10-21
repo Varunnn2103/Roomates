@@ -75,7 +75,7 @@ const PropertyList = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     setLoading(true);
-    axios.get(`http://localhost:8080/api/properties/search`, {
+    axios.get(`https://roomatefinder-phhh.onrender.com/api/properties/search`, {
       params: { city: city, maxPrice: maxPrice }
     })
     .then(response => {
