@@ -21,7 +21,7 @@ const RegisterPage = () => {
     setError(null);
     const registerData = { name, email, password };
 
-    axios.post('http://localhost:8080/api/auth/register', registerData)
+    axios.post('https://roomatefinder-phhh.onrender.com/api/auth/register', registerData)
       .then(response => {
         console.log(response.data);
         navigate('/'); // Redirect to home
