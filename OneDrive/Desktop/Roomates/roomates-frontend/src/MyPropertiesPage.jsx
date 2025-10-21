@@ -12,7 +12,7 @@ const ManageablePropertyCard = ({ property, onDelete, onUpdate }) => {
   const handleDelete = () => {
     if (window.confirm("Are you sure you want to delete this property?")) {
       // Because of our AuthContext, Axios will send the token
-      axios.delete(`http://localhost:8080/api/properties/${property.id}`)
+      axios.delete(`https://roomatefinder-phhh.onrender.com/api/properties/${property.id}`)
         .then(() => {
           onDelete(property.id); // Tell the parent to remove this card
         })
