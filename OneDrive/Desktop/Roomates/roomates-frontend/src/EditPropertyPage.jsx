@@ -21,7 +21,7 @@ const EditPropertyPage = () => {
   // 1. Fetch the existing property data
   useEffect(() => {
     // We can use the public /api/properties/{id} endpoint
-    axios.get(`http://localhost:8080/api/properties/${id}`)
+    axios.get(`https://roomatefinder-phhh.onrender.com/api/properties/${id}`)
       .then(response => {
         const prop = response.data;
         setTitle(prop.title);
