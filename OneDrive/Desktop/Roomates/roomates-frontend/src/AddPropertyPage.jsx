@@ -31,7 +31,7 @@ const AddPropertyPage = () => {
 
     // Because of our AuthContext, Axios will AUTOMATICALLY add
     // the "Authorization: Bearer <token>" header to this request.
-    axios.post('http://localhost:8080/api/properties', propertyData)
+    axios.post('https://roomatefinder-phhh.onrender.com/api/properties', propertyData)
       .then(response => {
         console.log(response.data);
         navigate('/'); // Redirect to home on success
