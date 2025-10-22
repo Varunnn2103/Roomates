@@ -50,7 +50,7 @@ const EditPropertyPage = () => {
     };
 
     // Use the PUT endpoint. Auth token is added automatically.
-    axios.put(`http://localhost:8080/api/properties/${id}`, propertyData)
+    axios.put(`https://roomatefinder-phhh.onrender.com/api/properties/${id}`, propertyData)
       .then(response => {
         navigate('/my-properties'); // Go back to My Properties list
       })
