@@ -20,7 +20,7 @@ const LoginPage = () => {
     e.preventDefault();
     setError(null);
 
-    axios.post('http://localhost:8080/api/auth/login', { email, password })
+    axios.post('https://roomatefinder-phhh.onrender.com/api/auth/login', { email, password })
       .then(response => {
         // Success! Get the token from the response
         const token = response.data.token;
