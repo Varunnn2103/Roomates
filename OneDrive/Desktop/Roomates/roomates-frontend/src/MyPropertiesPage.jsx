@@ -79,7 +79,7 @@ const MyPropertiesPage = () => {
 
   useEffect(() => {
     // AuthContext automatically adds the token
-    axios.get('http://localhost:8080/api/properties/my-properties')
+    axios.get('https://roomatefinder-phhh.onrender.com/api/properties/my-properties')
       .then(response => {
         setProperties(response.data);
         setLoading(false);
