@@ -34,7 +34,7 @@ const PropertyCard = ({ property }) => {
             <strong>City:</strong> {property.city}
           </Typography>
           <Typography color="text.secondary" gutterBottom>
-            <strong>Price:</strong> ${property.price} / month
+            <strong>Price:</strong> RS:{property.price} / month
           </Typography>
           <Typography color="text.secondary" gutterBottom>
             <strong>Type:</strong> {property.type}
