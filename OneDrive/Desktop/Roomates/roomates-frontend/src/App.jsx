@@ -40,7 +40,7 @@ function App() {
                 textDecoration: 'none' 
               }}
             >
-              Roomates 🏠
+              Roomeets 🏠
             </Typography>
 
             {/* Navigation Links */}
