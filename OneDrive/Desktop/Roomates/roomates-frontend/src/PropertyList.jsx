@@ -62,7 +62,7 @@ const PropertyList = () => {
 
   const fetchAllProperties = () => {
     setLoading(true);
-    axios.get('http://localhost:8080/api/properties')
+    axios.get('https://roomatefinder-phhh.onrender.com/api/properties')
       .then(response => {
         setProperties(response.data);
         setLoading(false);
