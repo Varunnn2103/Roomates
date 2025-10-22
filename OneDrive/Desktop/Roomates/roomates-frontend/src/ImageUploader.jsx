@@ -24,7 +24,7 @@ const ImageUploader = ({ propertyId, onUploadSuccess }) => {
 
     // Axios will send this as multipart/form-data
     // Auth token is automatically attached
-    axios.post(`http://localhost:8080/api/upload/property/${propertyId}`, formData)
+    axios.post(`https://roomatefinder-phhh.onrender.com/api/upload/property/${propertyId}`, formData)
       .then(response => {
         // Tell the parent component the upload was a success
         onUploadSuccess(response.data); 
